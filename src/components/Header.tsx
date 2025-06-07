@@ -19,8 +19,12 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">R</span>
+            <div className="w-10 h-10">
+              <img 
+                src="/lovable-uploads/7c7d7e05-f3a9-4ff0-8e4b-6ee65d53c0a2.png" 
+                alt="RafiqAI Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
             <span className="text-xl font-bold text-foreground">RafiqAI</span>
           </div>
@@ -29,25 +33,25 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('hero')}
-              className="text-foreground hover:text-blue-600 transition-colors"
+              className="text-foreground hover:text-primary transition-colors"
             >
               Home
             </button>
             <button 
               onClick={() => scrollToSection('how-it-works')}
-              className="text-foreground hover:text-blue-600 transition-colors"
+              className="text-foreground hover:text-primary transition-colors"
             >
               How It Works
             </button>
             <button 
               onClick={() => scrollToSection('features')}
-              className="text-foreground hover:text-blue-600 transition-colors"
+              className="text-foreground hover:text-primary transition-colors"
             >
               Features
             </button>
             <button 
               onClick={() => scrollToSection('early-access')}
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+              className="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
             >
               Contact
             </button>
@@ -68,25 +72,25 @@ const Header = () => {
             <div className="flex flex-col space-y-4">
               <button 
                 onClick={() => scrollToSection('hero')}
-                className="text-left text-foreground hover:text-blue-600 transition-colors"
+                className="text-left text-foreground hover:text-primary transition-colors"
               >
                 Home
               </button>
               <button 
                 onClick={() => scrollToSection('how-it-works')}
-                className="text-left text-foreground hover:text-blue-600 transition-colors"
+                className="text-left text-foreground hover:text-primary transition-colors"
               >
                 How It Works
               </button>
               <button 
                 onClick={() => scrollToSection('features')}
-                className="text-left text-foreground hover:text-blue-600 transition-colors"
+                className="text-left text-foreground hover:text-primary transition-colors"
               >
                 Features
               </button>
               <button 
                 onClick={() => scrollToSection('early-access')}
-                className="text-left bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors w-fit"
+                className="text-left bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors w-fit"
               >
                 Contact
               </button>

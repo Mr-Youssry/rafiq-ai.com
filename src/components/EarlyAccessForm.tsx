@@ -44,14 +44,14 @@ const EarlyAccessForm = () => {
   };
 
   return (
-    <section id="early-access" className="py-16 bg-gradient-to-br from-blue-600 to-blue-700">
+    <section id="early-access" className="py-16 bg-gradient-to-br from-primary to-primary">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center text-white mb-8">
+          <div className="text-center text-primary-foreground mb-8">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Be one of the first to use RafiqAI
             </h2>
-            <p className="text-lg text-blue-100">
+            <p className="text-lg text-primary-foreground/80">
               Help us shape the future of teacher coaching by joining our early access group. 
               We'll notify you as soon as we're ready to onboard new users.
             </p>
@@ -121,7 +121,7 @@ const EarlyAccessForm = () => {
               
               <Button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 text-lg"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Joining Waitlist...' : 'Join the Waitlist'}

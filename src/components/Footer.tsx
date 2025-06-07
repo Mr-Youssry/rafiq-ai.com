@@ -11,8 +11,12 @@ const Footer = () => {
             {/* Logo and Description */}
             <div className="md:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">R</span>
+                <div className="w-10 h-10">
+                  <img 
+                    src="/lovable-uploads/7c7d7e05-f3a9-4ff0-8e4b-6ee65d53c0a2.png" 
+                    alt="RafiqAI Logo"
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <span className="text-xl font-bold">RafiqAI</span>
               </div>
