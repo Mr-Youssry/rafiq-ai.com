@@ -41,7 +41,7 @@ const ValuePropositions = () => {
                 className="bg-card rounded-lg p-6 border border-border hover:shadow-lg transition-all duration-300 hover:scale-105 text-center"
               >
                 <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <prop.icon className="w-6 h-6 text-primary" />
+                  <prop.icon className="w-6 h-6 text-gray-700" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   {prop.title}
