@@ -15,7 +15,7 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
             Personalized Coaching for{' '}
-            <span className="text-primary">Every Teacher</span>
+            <span className="text-primary/80">Every Teacher</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-in">
