@@ -21,13 +21,23 @@ const EarlyAccessForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+
+    try {
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (!res.ok) throw new Error('Request failed');
+
       toast({
-        title: "Thank you!",
+        title: 'Thank you!',
         description: "We'll be in touch soon with early access details.",
       });
+
       setFormData({
         fullName: '',
         email: '',
@@ -35,8 +45,15 @@ const EarlyAccessForm = () => {
         country: '',
         message: ''
       });
+    } catch (error) {
+      toast({
+        title: 'Error',
+        description: 'Unable to join the waitlist. Please try again later.',
+        variant: 'destructive',
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
