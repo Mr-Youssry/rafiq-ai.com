@@ -1,3 +1,4 @@
+// Formspree waitlist form
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
@@ -5,7 +6,6 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
 
 const EarlyAccessForm = () => {
   const [formData, setFormData] = useState({
@@ -15,46 +15,6 @@ const EarlyAccessForm = () => {
     country: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const res = await fetch('/api/waitlist', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-
-      if (!res.ok) throw new Error('Request failed');
-
-      toast({
-        title: 'Thank you!',
-        description: "We'll be in touch soon with early access details.",
-      });
-
-      setFormData({
-        fullName: '',
-        email: '',
-        role: '',
-        country: '',
-        message: ''
-      });
-    } catch (error) {
-      toast({
-        title: 'Error',
-        description: 'Unable to join the waitlist. Please try again later.',
-        variant: 'destructive',
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -75,7 +35,11 @@ const EarlyAccessForm = () => {
           </div>
           
           <div className="bg-white rounded-lg p-8 shadow-2xl">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              action="https://formspree.io/f/xyzn1234"
+              method="POST"
+              className="space-y-6"
+            >
               <div>
                 <Label htmlFor="fullName">Full Name *</Label>
                 <Input
@@ -139,9 +103,8 @@ const EarlyAccessForm = () => {
               <Button
                 type="submit"
                 className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 text-lg"
-                disabled={isSubmitting}
               >
-                {isSubmitting ? 'Joining Waitlist...' : 'Join the Waitlist'}
+                Join the Waitlist
               </Button>
             </form>
           </div>
